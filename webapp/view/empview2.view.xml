@@ -1,0 +1,20 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" controllerName="com.employee.empproject.controller.empview2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m">
+        <Page id="page2" title="Employee Details">
+            <content>   
+            <Panel id="panel2">
+                <f:SimpleForm id="sf2" labelSpanL="6" emptySpanL="0">
+                    <f:content>
+                    <Label id="lbl1f2" text="Employee Id"></Label>
+                    <Input id="ip1f2" value="{Empid}" editable="false"></Input>
+                    <Label id="lbl2f2" text="Employee Name"></Label>
+                    <Input id="ip2f2" value="{Empname}" editable="false"></Input>
+                    </f:content>
+                </f:SimpleForm>
+             </Panel>
+            </content>
+        </Page>
+</mvc:View>

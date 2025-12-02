@@ -1,0 +1,110 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" controllerName="com.employee.empproject.controller.empView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <!-- header panel -->
+            <Panel id="pnl1" expandable="true" expanded="true" headerText="Employee Details">
+            <f:SimpleForm id="sf" layout="ResponsiveGridLayout" editable="true" 
+                          labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="6" columnsL="3">
+                  <core:Title id="coreFilter" text="Filter"></core:Title>
+                    <Label id="lbl1" text="Employee Id"></Label>  
+                    <Input id="ip1" showValueHelp="true" valueHelpRequest="onF4HelpId"></Input>  
+                    <Label id="lbl2" text="Employee Name"></Label>  
+                    <Input id="ip2" showValueHelp="true" valueHelpRequest="onF4HelpName"></Input>   
+                    <Label id="lbldoj" text="Date of Joining"></Label>   
+                    <DatePicker id="dp"></DatePicker>  
+                    <Label id="lbl3" text="Date Range"></Label>
+                    <DateRangeSelection id="DR"></DateRangeSelection>
+                    <core:Title id="coresort" text="Sorting"></core:Title>
+                    <Label id="sortlbl" text="Sort fields"></Label>
+                    <ComboBox id="cb1">
+                        <items>
+                            <core:Item id="cbempid" text="Employee Id" key="Empid"></core:Item>
+                            <core:Item id="cbempname" text="Employee Name" key="Empname"></core:Item>
+                        </items>
+                    </ComboBox>
+                    <Label id="lblRb" text="Sort type"></Label>
+                    <RadioButtonGroup id="idrbGrp" columns="2" selectedIndex="-1">
+                        <RadioButton id="rb1" text="Ascending"></RadioButton>
+                        <RadioButton id="rb2" text="Descenging"></RadioButton>
+                    </RadioButtonGroup>
+                    <core:Title id="coreGrouping" text="Grouping"></core:Title>
+                        <ComboBox id="cbGroup">
+                            <core:Item id="cbAsc"></core:Item>
+                        </ComboBox>                
+            </f:SimpleForm>
+            <FlexBox id="flxbox" justifyContent="End">
+                <Button id="goBtn" text="Go" type="Accept" icon="sap-icon://accept" press=".onGo"></Button>
+                <Button id="resetBtn" text="Reset" type="Reject" class="sapUiTinyMarginBegin" press=".onReset"
+                 icon="sap-icon://reset"></Button>
+            </FlexBox>
+            </Panel>
+            <Table id="table2" items="{/EmployeeSet}" itemPress="onItemSelect" >
+                <headerToolbar>
+                    <Toolbar id="toolbar">
+                        <Title id="title" text="Employee Details"></Title>
+                        <ToolbarSpacer id="tblsp"></ToolbarSpacer>
+                        <Button id="toolbtn" icon="sap-icon://excel-attachment" press="onExport" text="Export" type="Emphasized"></Button>
+                        <Button id="createbtn" text="Create Employee" press="onCreate" type="Emphasized" icon="sap-icon://create"></Button>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="col1">
+                        <Text id="coltxt1" text="Employee ID"></Text>
+                    </Column>
+                    <Column id="col2">
+                        <Text id="coltxt2" text="Employee Name"></Text>
+                    </Column>
+                    <Column id="col3">
+                        <Text id="coltxt3" text="Designation"></Text>
+                    </Column>
+                    <Column id="col4">
+                        <Text id="coltxt4" text="Skill"></Text>
+                    </Column>
+                    <Column id="col5">
+                        <Text id="coltxt5" text="Email"></Text>
+                    </Column>
+                    <Column id="col6">
+                        <Text id="coltxt6" text="Phone"></Text>
+                    </Column>
+                    <Column id="col7">
+                        <Text id="coltxt7" text="Salary"></Text>
+                    </Column>
+                    <Column id="col8">
+                        <Text id="coltxt8" text="Date of Joining"></Text>
+                    </Column>
+                    <Column id="col9">
+                        <Text id="coltxt9" text="Rating"></Text>
+                    </Column>
+                    <Column id="col10">
+                        <Text id="coltxt10" text="Status"></Text>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="collist" type="Active" press="onSelect">
+                        <cells>
+                            <Text id="empid" text="{path : 'Empid', 
+                                                    type : 'sap.ui.model.odata.type.String', 
+                                                    constraints: { 
+                                                        isDigitSequence : true,
+                                                        maxLength : 6
+                                                    }}" ></Text>
+                            <Text id="empname" text="{Empname}"></Text>
+                            <Text id="Desig" text="{Desig}"></Text>
+                            <Text id="Skill" text="{Skill}"></Text>
+                            <Text id="email" text="{Email}"></Text>
+                            <Text id="phone" text="{Phone}"></Text>
+                            <Text id="Salary" text="{Salary}"></Text>
+                            <Text id="Doj" text="{path:'Doj',formatter:'.f.formatDate'}"></Text>
+                            <Text id="Rating" text="{Rating}"></Text>
+                            <Text id="Status" text="{Status}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>            
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

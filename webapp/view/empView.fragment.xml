@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+
+    <Dialog id="dialog" showHeader="true" title="Show Employee Details" contentWidth="60%">
+        <Table id="dlgTable" items="{/EmployeeSet}">
+            <columns>
+                <Column id="tblCol1">
+                    <Text id="tblColTxt1" text="Employee Id"></Text>
+                </Column>
+                <Column id="tblCol2">
+                    <Text id="tblColTxt2" text="Employee Name"></Text>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem id="dlgColList" type="Active" press="onDlgSelect">
+                    <cells>
+                        <Text id="dlgCollistT1" text="{Empid}"></Text>
+                    </cells>
+                    <cells>
+                        <Text id="dlgCollistT3" text="{Empname}"></Text>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <endButton>
+            <Button id="dlgCloseBtn" type="Reject" text="Close" press=".onDlgClose"></Button>
+        </endButton>
+ 
+    </Dialog>
+
+
+</core:FragmentDefinition>

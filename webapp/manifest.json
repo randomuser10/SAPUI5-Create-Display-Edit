@@ -1,0 +1,125 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "com.employee.empproject",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.19.5",
+      "toolsId": "5ce46da3-6d13-4d6d-911c-ade94c1eaece"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZMDS_EMPDATA_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.142.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.employee.empproject.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.employee.empproject.view",
+        "async": true,
+        "viewPath": "com.employee.empproject.view"
+      },
+      "routes": [
+        {
+          "name": "RouteempView",
+          "pattern": ":?query:",
+          "target": [
+            "TargetempView"
+          ]
+        },
+        {
+          "name": "Routeempview2",
+          "pattern": "view2/{key}",
+          "target": [
+            "Targetempview2"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetempView": {
+          "id": "empView",
+          "name": "empView"
+        },
+        "Targetempview2": {
+          "id": "empview2",
+          "name": "empview2"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.employee.empproject.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}
