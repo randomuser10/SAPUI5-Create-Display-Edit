@@ -13,7 +13,7 @@ sap.ui.define([
         },
         onF4HelpId() {
             if (!this.oDialog) {
-                this.oDialog = sap.ui.xmlfragment(this.getView().getId(), "com.employee.empproject.view.empView", this);
+                this.oDialog = sap.ui.xmlfragment(this.getView().getId(), "com.employee.empproject.view.empViewf4", this);
 
                 this.getView().addDependent(this.oDialog);
 
@@ -22,7 +22,7 @@ sap.ui.define([
         },
         onF4HelpName() {
             if (!this.oDialog) {
-                this.oDialog = sap.ui.xmlfragment(this.getView().getId(), "com.employee.empproject.view.empView", this);
+                this.oDialog = sap.ui.xmlfragment(this.getView().getId(), "com.employee.empproject.view.empViewf4", this);
                 this.getView().addDependent(this.oDialog);
             }
             this.oDialog.open();
@@ -157,6 +157,11 @@ sap.ui.define([
             });
 
 
-        }
+        },
+        onCreate(){
+            this.getOwnerComponent().getRouter().navTo("Routeempview2",{
+                key:"newemp"
+            });
+            }
     });
 });

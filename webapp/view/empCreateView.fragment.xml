@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns:tnt="sap.tnt" xmlns:l="sap.ui.layout"
+ xmlns:form="sap.ui.layout.form" xmlns="sap.m" xmlns:core="sap.ui.core">
+
+<form:SimpleForm id="createForm" labelSpanL="6" emptySpanL="0" title="Create new Employee">
+<form:content>
+    <Label id="cr_lbl1" text="Employee ID" required="true"></Label>
+    <Input id="cr_ip1"></Input>
+
+    <Label id="cr_lbl2" text="Employee Name" required="true"></Label>
+    <Input id="cr_ip2"></Input>
+
+    <Label id="cr_lbl3" text="Designation" required="true"></Label>
+    <Input id="cr_ip3"></Input>
+
+    <Label id="cr_lbl4" text="Skill" required="true"></Label>
+    <Input id="cr_ip4"></Input>
+
+    <Label id="cr_lbl5" text="Email" required="true"></Label>
+    <Input id="cr_ip5"></Input>
+
+    <Label id="cr_lbl6" text="Phone" required="true"></Label>
+    <Input id="cr_ip6"></Input>
+
+    <Label id="cr_lbl7" text="Salary" required="true"></Label>
+    <Input id="cr_ip7"></Input>
+
+    <Label id="cr_lbl8" text="Date of Joining" required="true"></Label>
+    <DatePicker id="cr_dp"></DatePicker>
+
+    <Label id="cr_lbl9" text="Status" required="true"></Label>
+    <Input id="cr_ip9"></Input>
+
+    <Label id="cr_lbl10" text="Rating" required="true"></Label>
+    <Input id="cr_ip10"></Input>
+
+</form:content>
+
+</form:SimpleForm>
+
+</core:FragmentDefinition>

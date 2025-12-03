@@ -1,0 +1,38 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout"
+xmlns:f="sap.ui.layout.form">
+<f:SimpleForm id="Editform" labelSpanL="6" emptySpanL="0" title="Employee Details">
+    <f:content>
+        <Label id="edt_lbl1" text="Employee ID" ></Label>
+        <Input id="edt_ip1" value="{Empid}" editable="false"></Input>
+
+        <Label id="edt_lbl2" text="Employee Name" ></Label>
+        <Input id="edt_ip2" value="{Empname}"></Input>
+
+        <Label id="edt_lbl3" text="Designation" ></Label>
+        <Input id="edt_ip3" value="{Desig}"></Input>
+
+        <Label id="edt_lbl4" text="Skill" ></Label>
+        <Input id="edt_ip4" value="{Skill}"></Input>
+
+        <Label id="edt_lbl5" text="Email" ></Label>
+        <Input id="edt_ip5" value="{Email}"></Input>
+
+        <Label id="edt_lbl6" text="Phone" ></Label>
+        <Input id="edt_ip6"  value="{Doj}"></Input>
+
+        <Label id="edt_lbl7" text="Salary" ></Label>
+        <Input id="edt_ip7"  value="{Salary}"></Input>
+
+        <Label id="edt_lbl8" text="Date of Joining" ></Label>
+        <Input id="edt_dp9"  value="{Doj}"></Input>
+
+        <Label id="edt_lbl9" text="Status" ></Label>
+        <Input id="edt_ip9"  value="{Status}"></Input>
+
+        <Label id="edt_lbl10" text="Rating" ></Label>
+        <Input id="edt_ip10" value="{Rating}"></Input>
+
+    </f:content>
+
+</f:SimpleForm>
+</core:FragmentDefinition>

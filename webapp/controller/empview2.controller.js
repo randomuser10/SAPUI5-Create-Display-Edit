@@ -10,6 +10,12 @@ sap.ui.define(['sap/ui/core/mvc/Controller',
     },
     onPatternMatched(oEvent){
         var empid = oEvent.getParameter("arguments").key;
+        if(empid === "newemp"){
+            
+
+        }
+
+
         this.getView().bindElement("/EmployeeSet('" + empid + "')");
     }
    });

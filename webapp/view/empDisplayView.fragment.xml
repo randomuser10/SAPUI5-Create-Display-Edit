@@ -1,0 +1,38 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout"
+xmlns:f="sap.ui.layout.form">
+<f:SimpleForm id="displayform" labelSpanL="6" emptySpanL="0" title="Employee Details">
+    <f:content>
+        <Label id="dis_lbl1" text="Employee ID" ></Label>
+        <Text id="dis_ip1" text="{Empid}"></Text>
+
+        <Label id="dis_lbl2" text="Employee Name" ></Label>
+        <Text id="dis_ip2" text="{Empname}"></Text>
+
+        <Label id="dis_lbl3" text="Designation" ></Label>
+        <Text id="dis_ip3" text="{Desig}"></Text>
+
+        <Label id="dis_lbl4" text="Skill" ></Label>
+        <Text id="dis_ip4" text="{Skill}"></Text>
+
+        <Label id="dis_lbl5" text="Email" ></Label>
+        <Text id="dis_ip5" text="{Email}"></Text>
+
+        <Label id="dis_lbl6" text="Phone" ></Label>
+        <Text id="dis_ip6" text="{Doj}"></Text>
+
+        <Label id="dis_lbl7" text="Salary" ></Label>
+        <Text id="dis_ip7" text="{Salary}"></Text>
+
+        <Label id="dis_lbl8" text="Date of Joining" ></Label>
+        <Text id="dis_dp9" text="{Doj}"></Text>
+
+        <Label id="dis_lbl9" text="Status" ></Label>
+        <Text id="dis_ip9" text="{Status}"></Text>
+
+        <Label id="dis_lbl10" text="Rating" ></Label>
+        <Text id="dis_ip10" text="{Rating}"></Text>
+
+    </f:content>
+
+</f:SimpleForm>
+</core:FragmentDefinition>
